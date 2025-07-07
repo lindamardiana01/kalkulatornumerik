@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Turunan Numerik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="gradient-text">Kalkulator Turunan Numerik</span>
+            </h1>
+            <p class="subtitle">Metode Hampiran Selisih Mundur & Hampiran Selisih Pusat</p>
+        </header>
+
+        <main>
+            <div class="calculator-card">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="function-input">Fungsi f(x)</label>
+                        <input type="text" id="function-input" placeholder="Contoh: x^2 + 3*x + 2" value="x^2 + 3*x + 2">
+                        <small class="input-help">Gunakan operator: +, -, *, /, ^, sin(), cos(), tan(), log(), sqrt(), exp()</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="x-value">Nilai x</label>
+                        <input type="number" id="x-value" placeholder="Masukkan nilai x" value="2" step="any">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="h-value">Nilai h (langkah)</label>
+                        <input type="number" id="h-value" placeholder="Contoh: 0.001" value="0.001" step="any">
+                        <small class="input-help">Semakin kecil h, semakin akurat hasil (biasanya 0.001 - 0.0001)</small>
+                    </div>
+
+                    <div class="method-selection">
+                        <h3>Pilih Metode Hampiran</h3>
+                        <div class="method-options">
+                            <label class="method-option">
+                                <input type="radio" name="method" value="backward" checked>
+                                <span class="method-label">Selisih Mundur</span>
+                                <small>f'(x) ≈ [f(x) - f(x-h)] / h</small>
+                            </label>
+                            <label class="method-option">
+                                <input type="radio" name="method" value="central">
+                                <span class="method-label">Selisih Pusat</span>
+                                <small>f'(x) ≈ [f(x+h) - f(x-h)] / (2h)</small>
+                            </label>
+                            <label class="method-option">
+                                <input type="radio" name="method" value="both">
+                                <span class="method-label">Kedua Metode</span>
+                                <small>Bandingkan hasil kedua metode</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="calculate-btn" class="calculate-btn">
+                        <span>Hitung Turunan</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 17l5-5-5-5M6 17l5-5-5-5"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="results-section" id="results-section">
+                    <h3>Hasil Perhitungan</h3>
+                    <div id="results-content"></div>
+                </div>
+
+                <div class="explanation-section" id="explanation-section">
+                    <h3>Penjelasan Metode</h3>
+                    <div id="explanation-content"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Kalkulator Turunan Numerik - Dibuat oleh Linda Mardiana</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
